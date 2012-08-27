@@ -8,15 +8,16 @@ Mac版のGoogleTalkが存在しないので、Rubyで通知機能を作った。
 
 使い方
 ----------------
-require 'gmailnotify.rb'
-
-xmpp_client = GmailNotify.new("takuya.XXX@gmail.com", "++password++")
-xmpp_client.start
+1. sudo /usr/bin/gem install xmpp4r
+2. Install terminal-notifier. I recommend to install Application version.
+2. Copy gmailnotify.rb to /usr/local/sbin/ or any place you want (#1)
+3. Copy watch-account.rb and setup you email and password.
+4. Run the script above.
 
 必要なもの
 ---------------------
 1: xmpp4rライブラリ。  (gem install xmpp4r)
-2: growl + growlnotify (http://growl.info/extras.php#growlnotify)
+2: terminal-notifier gem http://osxdaily.com/2012/08/03/send-an-alert-to-notification-center-from-the-command-line-in-os-x/
 
 
 
@@ -43,6 +44,3 @@ xmpp4rの問題点、Thread#abort_on_exception=true を使い倒す
 Gmail側のXMPP独自拡張の仕様
 -------------------------
 Gmail Notifications : http://code.google.com/apis/talk/jep_extensions/gmail.html
-
-
-

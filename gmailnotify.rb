@@ -159,7 +159,7 @@ class GmailNotify
   end
   def notify(mailbox)
     mailbox.mail_threads.each{|t| 
-      `growlnotify -a ./GmailIcon.png --image ./GmailIcon.png -n 'gmail notification'  -m '#{t.from}\n#{t.body_intro}' -t '#{t.subject}'`
+      `/Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title '#{t.subject}' -message '#{t.from}\n#{t.body_intro}'`
     }
   end
 end
